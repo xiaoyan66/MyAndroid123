@@ -47,7 +47,7 @@ public class Ex25Activity extends BaseActivity
     EditText gradute;
 
     @Override
-    protected void initContentView(Bundle savedInstanceState)
+    protected void initmycreate(Bundle savedInstanceState)
     {
         //super.onCreate(savedInstanceState);
         setContentView(R.layout.ex25_layout);
@@ -218,4 +218,6 @@ public class Ex25Activity extends BaseActivity
         p.show();
 
     }
+
+
 }

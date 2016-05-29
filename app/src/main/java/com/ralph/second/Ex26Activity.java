@@ -38,7 +38,6 @@ public class Ex26Activity extends AppCompatActivity {
 //        ab.setTitle("");
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("we");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -47,32 +46,6 @@ public class Ex26Activity extends AppCompatActivity {
         MenuInflater inf =new MenuInflater(this);
         inf.inflate(R.menu.ex26menu,menu);
         return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
-            case R.id.font_10:
-                txt.setTextSize(10*3);
-                break;
-            case R.id.font_12:
-                txt.setTextSize(12*3);
-                break;
-            case R.id.font_14:
-                txt.setTextSize(14*3);
-                break;
-            case R.id.font_16:
-                txt.setTextSize(16*3);
-                break;
-            case R.id.normal_btn:
-                Toast.makeText(Ex26Activity.this, "肖岩作业", Toast.LENGTH_SHORT).show();
-                break;
-            case android.R.id.home:
-                Toast.makeText(Ex26Activity.this, "点击了Home图标", Toast.LENGTH_SHORT).show();
-                break;
-        }
-        return true;
     }
 
 
@@ -100,37 +73,6 @@ public class Ex26Activity extends AppCompatActivity {
         return true;
     }
 
-    public void changeFont(View view)
-    {
-        popm = new PopupMenu(this,view);
-        getMenuInflater().inflate(R.menu.ex26menu,popm.getMenu());
-        popm.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.font_10:
-                        txt.setTextSize(10*3);
-                        break;
-                    case R.id.font_12:
-                        txt.setTextSize(12*3);
-                        break;
-                    case R.id.font_14:
-                        txt.setTextSize(14*3);
-                        break;
-                    case R.id.font_16:
-                        txt.setTextSize(16*3);
-                        break;
-                    case R.id.normal_btn:
-                        Toast.makeText(Ex26Activity.this, "肖岩作业", Toast.LENGTH_SHORT).show();
-                        break;
-                }
-                return true;
-            }
-        });
-
-        popm.show();
-    }
 
     public void showActionBar(View view)
     {
