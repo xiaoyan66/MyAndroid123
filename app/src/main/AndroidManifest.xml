@@ -13,37 +13,38 @@
         android:icon="@mipmap/ic_launcher"
         android:label="作业APP"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Ex01Activity"></activity>
-        <activity android:name=".Ex02Activity"></activity>
-        <activity android:name=".TestActivity"></activity>
-        <activity android:name=".Ex03Activity"></activity>
-        <activity android:name=".Ex04Activity"></activity>
-        <activity android:name=".Ex05Activity"></activity>
-        <activity android:name=".Ex06Activity"></activity>
-        <activity android:name=".Ex07Activity"></activity>
-        <activity android:name=".Ex08Activity"></activity>
-        <activity android:name=".Ex09Activity"></activity>
-        <activity android:name="Ex09Activity2"></activity>
-        <activity android:name=".Ex10Activity"></activity>
-        <activity android:name=".Ex11Activity"></activity>
-        <activity android:name=".Ex12Activity"></activity>
-        <activity android:name=".Ex13Activity"></activity>
-        <activity android:name=".EX14Activity"></activity>
-        <activity android:name=".Ex15Activity"></activity>
-        <activity android:name=".Ex16Activity"></activity>
-        <activity android:name=".Ex17Activity"></activity>
-        <activity android:name=".Ex18Activity"></activity>
-        <activity android:name=".PlaneActivity"></activity>
-        <activity android:name=".Ex19Activity"></activity>
-        <activity android:name=".Ex20Activity"></activity>
-        <activity android:name=".Ex21Activity"></activity>
-        <activity android:name=".Ex22Activity"></activity>
-        <activity android:name=".Ex23Activity"></activity>
-        <activity android:name=".Ex24Activity"></activity>
+        android:theme="@style/AppTheme"
+      >
+        <activity android:name=".Ex01Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex02Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".TestActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex03Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex04Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex05Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex06Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex07Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex08Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex09Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name="Ex09Activity2" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex10Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex11Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex12Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex13Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".EX14Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex15Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex16Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex17Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex18Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".PlaneActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex19Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex20Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex21Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex22Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex23Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex24Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex25Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Ex26Activity" android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Ex26Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ZuoYe" android:theme="@style/AppTheme.NoActionBar"   android:exported="true" android:launchMode="singleTask">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />

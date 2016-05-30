@@ -7,13 +7,12 @@ import android.widget.ArrayAdapter;
 /**
  * Created by 果占先 on 2016/5/19.
  */
-public class Ex11Activity extends ListActivity {
+public class Ex11Activity extends BaseActivity {
     String[] arr = {"沈阳","北京","哈尔滨","上海","深圳"};
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initmycreate(Bundle savedInstanceState) {
 
         ArrayAdapter ad = new ArrayAdapter(this,android.R.layout.simple_list_item_1,arr);
-        setListAdapter(ad);
+        
     }
 }

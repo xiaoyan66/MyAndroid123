@@ -15,14 +15,13 @@ import org.w3c.dom.Text;
 /**
  * Created by 果占先 on 2016/5/19.
  */
-public class Ex13Activity extends Activity {
+public class Ex13Activity extends BaseActivity {
     private String[] operaName = {"葫芦娃","蜡笔小新","西游记","喜羊羊","猫和老鼠"};
 
     private String[][] peronName = {{"蛇精","爷爷","穿山甲","大娃"},{"美伢","小白","小新"},{"白龙马","八戒","悟空","悟净"},{"灰太狼","懒羊羊"},{"Tom","Jerry"}};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initmycreate(Bundle savedInstanceState) {
         setContentView(R.layout.ex13_layout);
 
         ExpandableListAdapter ela = new ExpandableListAdapter() {

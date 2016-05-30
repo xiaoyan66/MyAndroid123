@@ -10,7 +10,7 @@ import android.widget.ImageView;
 /**
  * Created by Administrator on 2016/5/27.
  */
-public class Ex27Activity extends Activity implements View.OnTouchListener{
+public class Ex27Activity extends BaseActivity implements View.OnTouchListener{
     private ImageView myImageView;
     private int screenWidth;
     private int screenHeight;
@@ -23,8 +23,7 @@ public class Ex27Activity extends Activity implements View.OnTouchListener{
         screenHeight = dm.heightPixels;
     }
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initmycreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity01);
         this.img();
     }

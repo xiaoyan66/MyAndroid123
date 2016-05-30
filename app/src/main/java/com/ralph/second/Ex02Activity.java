@@ -8,10 +8,9 @@ import android.view.View;
 /**
  * Created by 果占先 on 2016/5/12.
  */
-public class Ex02Activity extends Activity {
+public class Ex02Activity extends BaseActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initmycreate(Bundle savedInstanceState) {
 
         MyView vv = new MyView(this);
         vv.setOnTouchListener(vv);
