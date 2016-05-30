@@ -23,7 +23,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         initmycreate(savedInstanceState);
         Toolbar t = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(t);
-        getSupportActionBar().setTitle("作业APP");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     @Override

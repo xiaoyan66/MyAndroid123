@@ -17,8 +17,8 @@ public class ZuoYe extends BaseActivity {
             "完成布局", "完成计算器布局界面", "飞机拖动", "点击图片，连到通讯录的一个电话号码", "完成布局", "radio", "短信验证码",
             "弹球游戏", "百度API手机归属地查询", "利用百度API做一个菜谱查询（带图片的）", "完成布局", "下拉列表", "类似淘宝头部的自动播放", "列表点击后跳转页面显示点击的项目详情",
             "自动播放图片类 每隔三秒显示不同的View", "控制透明度", "图片上传"};
-    Class[] clazz = {Ex01Activity.class, Ex02Activity.class, Ex03Activity.class, Ex04Activity.class
-            , Ex05Activity.class, Ex06Activity.class, Ex07Activity.class, Ex08Activity.class,
+    Class[] clazz = {Ex01Activity.class, Ex02Activity.class, Ex03Activity.class, Ex04Activity.class,
+            Ex05Activity.class, Ex06Activity.class, Ex07Activity.class, Ex08Activity.class,
             Ex09Activity.class, Ex10Activity.class, Ex11Activity.class, Ex12Activity.class, Ex13Activity.class, EX14Activity.class,
             Ex15Activity.class, Ex16Activity.class, Ex17Activity.class, Ex18Activity.class, Ex19Activity.class, Ex20Activity.class,
             Ex21Activity.class, Ex22Activity.class, Ex23Activity.class, Ex24Activity.class, Ex25Activity.class, Ex26Activity.class,

@@ -12,18 +12,6 @@ public class Ex02Activity extends BaseActivity {
     @Override
     protected void initmycreate(Bundle savedInstanceState) {
 
-        MyView vv = new MyView(this);
-        vv.setOnTouchListener(vv);
-//        vv.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                vv.x = event.getX();
-//                vv.y = event.getY();
-//                v.invalidate();
-//                return true;
-//            }
-//        });
-
-        setContentView(vv);
+        setContentView(R.layout.ex02_layout);
     }
 }
