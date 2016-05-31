@@ -2,34 +2,59 @@ package com.ralph.second;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by 果占先 on 2016/5/19.
  */
 public class EX14Activity extends BaseActivity {
-    String [] s={"java","c","c#","html","jsp"};
+    Handler h = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if(msg.what==0){
+                btn.setText("获取验证短信");
+                btn.setEnabled(true);
+                t.cancel();
+            }else{
+                btn.setText("获取中...."+msg.what+"秒");
+            }
+        }
+    };
 
+    Timer t;
+    Button btn;
     @Override
     protected void initmycreate(Bundle savedInstanceState) {
-        setContentView(R.layout.ex14_layout);
-        Spinner ss= (Spinner) findViewById(R.id.xiala);
-        ArrayAdapter aa=new ArrayAdapter(this,android.R.layout.simple_list_item_1,s);
-        ss.setAdapter(aa);
-        ss.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String t="你选择的是"+s[position];
-                Toast.makeText(EX14Activity.this,t , Toast.LENGTH_SHORT).show();
-            }
 
+        setContentView(R.layout.ex14_layout);
+
+        btn = (Button) findViewById(R.id.sendBtn);
+    }
+
+    public void sendSMS(View view)
+    {
+        btn.setEnabled(false);
+        btn.setText("获取中....");
+        t = new Timer();
+        t.schedule(new TimerTask() {
+            int time = 5;
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void run() {
+                Message m = new Message();
+                m.what = time--;
+                h.sendMessage(m);
             }
-        });
+        },100,1000);
     }
 }

@@ -3,9 +3,45 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <include layout="@layout/toolbar_layout" />
-    <QuickContactBadge
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/photo"
-        android:id="@+id/quickContactBadge" />
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorAccent">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/icon_41"/>
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:hint="QQ号/手机号/邮箱"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="密码"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:id="@+id/button3"
+        android:background="@color/colorAccent"
+        android:layout_gravity="center_horizontal" />
+
+
 </LinearLayout>

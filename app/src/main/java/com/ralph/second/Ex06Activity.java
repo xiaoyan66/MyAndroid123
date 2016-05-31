@@ -12,7 +12,5 @@ public class Ex06Activity extends BaseActivity {
     protected void initmycreate(Bundle savedInstanceState) {
         setContentView(R.layout.ex06_layout);
 
-        QuickContactBadge qc = (QuickContactBadge) findViewById(R.id.quickContactBadge);
-        qc.assignContactFromPhone("13889221849",false);
     }
 }

@@ -3,10 +3,24 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <include layout="@layout/toolbar_layout" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="手机宽度"
+        android:id="@+id/kuandu"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="手机高度"
+        android:id="@+id/gaodu"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="手机DPI"
+        android:id="@+id/dpi"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="获取验证短信"
-        android:id="@+id/sendBtn"
-        android:onClick="sendSMS"/>
+        android:text="点击获取"
+        android:onClick="huoqu"/>
 </LinearLayout>

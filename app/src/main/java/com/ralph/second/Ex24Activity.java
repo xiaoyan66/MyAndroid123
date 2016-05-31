@@ -7,39 +7,50 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by 果占先 on 2016/5/24.
  */
 public class Ex24Activity extends BaseActivity {
-    NotificationManager nm;
+
+    public int[] a = {R.drawable.icon_11,R.drawable.icon_28,R.drawable.icon_30,R.drawable.icon_33,R.drawable.icon_37};
+
+    public int i = 0;
+    int alpha = 255;
+    ImageView imgView;
+
     @Override
     protected void initmycreate(Bundle savedInstanceState) {
         setContentView(R.layout.ex24_layout);
-
-        nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        imgView = (ImageView)findViewById(R.id.myimage);
+        imgView.setImageResource(a[0]);
     }
 
-    public void sendMsg(View view)
-    {
-        Intent intent = new Intent(Ex24Activity.this,Ex23Activity.class);
-        PendingIntent p = PendingIntent.getActivity(this,99,intent,0);
+    public void last(View view){
+        imgView.setImageResource(a[Math.abs(--i)%5]);
+    }
+    public void next(View view){
+        imgView.setImageResource(a[Math.abs(++i)%5]);
+    }
+    public void tjia(View view){
+        alpha+=10;
+        if(alpha > 255){
+            imgView.setImageAlpha(255);
+            alpha = 255;
+        }else{
+            imgView.setImageAlpha(alpha);
+        }
 
-        Notification n = new Notification.Builder(this)
-                .setAutoCancel(true)
-                .setTicker("你有信息的消息--蝈蝈")
-                .setSmallIcon(R.drawable.icon_18)
-                .setContentTitle("明天换教室")
-                .setContentText("太好了，终于换教室了，而且电脑也升级了！")
-                .setWhen(System.currentTimeMillis())
-                .setContentIntent(p)
-                .build();
-
-        nm.notify(0x987,n);
+    }
+    public void tjian(View view){
+        alpha-=10;
+        if(alpha < 0){
+            imgView.setImageAlpha(0);
+            alpha=0;
+        }else{
+            imgView.setImageAlpha(alpha);
+        }
     }
 
-    public void delMsg(View view)
-    {
-        nm.cancel(0x987);
-    }
 }
