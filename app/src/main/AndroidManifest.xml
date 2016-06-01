@@ -43,6 +43,11 @@
         <activity android:name=".Ex24Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex25Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex26Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex27Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex28Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex29Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex30Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex31Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ZuoYe" android:theme="@style/AppTheme.NoActionBar"  android:exported="true" android:launchMode="singleTask">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
