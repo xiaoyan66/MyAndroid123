@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -48,6 +48,7 @@
         <activity android:name=".Ex29Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex30Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex31Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex32Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ZuoYe" android:theme="@style/AppTheme.NoActionBar"  android:exported="true" android:launchMode="singleTask">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />

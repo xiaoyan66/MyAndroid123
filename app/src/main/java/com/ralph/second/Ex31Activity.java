@@ -3,6 +3,8 @@ package com.ralph.second;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -11,14 +13,12 @@ import android.widget.ImageView;
  */
 public class Ex31Activity extends BaseActivity{
     ImageView iv;
-    Button bt1;
-    Button bt2;
     AnimationDrawable ad;
+    ImageView iv2;
     @Override
     protected void initmycreate(Bundle savedInstanceState) {
-        iv= (ImageView) findViewById(R.id.img);
-        bt1= (Button) findViewById(R.id.button1);
-        bt2= (Button) findViewById(R.id.button2);
+        setContentView(R.layout.ex31_layout);
+        iv= (ImageView) findViewById(R.id.img123);
         ad = (AnimationDrawable) iv.getBackground();
     }
 
@@ -27,5 +27,12 @@ public class Ex31Activity extends BaseActivity{
 }
     public void stop1(View view){
         ad.stop();
+    }
+    public void startAnimation(View view)
+    {
+        Animation a = AnimationUtils.loadAnimation(this,R.anim.anim);
+        a.setFillAfter(true);
+
+        iv2.startAnimation(a);
     }
 }
