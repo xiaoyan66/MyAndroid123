@@ -33,7 +33,7 @@ public class Ex34Activity extends BaseActivity {
         tv= (TextView) findViewById(R.id.tv);
         bt= (Button) findViewById(R.id.bt);
 
-        File root=new File("Environment.getExternalStorageDirectory()");
+        File root=new File("/mnt/sdcard");
         if(root.exists()){
             file=root;
             files=root.listFiles();
@@ -67,7 +67,7 @@ public class Ex34Activity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    if(!file.getCanonicalPath().equals("Environment.getExternalStorageDirectory()")){
+                    if(!file.getCanonicalPath().equals("/mnt/sdcard")){
                         file=file.getParentFile();
                         files=file.listFiles();
                         inflateListView(files);
@@ -83,15 +83,15 @@ public class Ex34Activity extends BaseActivity {
         for (int i=0;i<files.length;i++){
             Map<String,Object> list=new HashMap<String,Object>();
             if(files[i].isDirectory()){
-                list.put("icon",R.drawable.quan1);
+                list.put("icon",R.drawable.file);
             }
             else {
-                list.put("icon",R.drawable.quan2);
+                list.put("icon",R.drawable.home);
             }
             list.put("filename",files[i].getName());
             lists.add(list);
         }
-        SimpleAdapter s=new SimpleAdapter(this,lists,R.layout.ex34_layout,new String[]{"icon","filename"},new int[]{R.id.icon,R.id.findResult});
+        SimpleAdapter s=new SimpleAdapter(this,lists,R.layout.line,new String[]{"icon","filename"},new int[]{R.id.icon,R.id.file_name});
         lv.setAdapter(s);
         tv.setText("当前路径"+file.getCanonicalPath());
     }
