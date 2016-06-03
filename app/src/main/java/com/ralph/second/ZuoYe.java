@@ -24,7 +24,8 @@ public class ZuoYe extends BaseActivity {
             Ex09Activity.class, Ex10Activity.class, Ex11Activity.class, Ex12Activity.class, Ex13Activity.class, EX14Activity.class,
             Ex15Activity.class, Ex16Activity.class, Ex17Activity.class, Ex18Activity.class, Ex19Activity.class, Ex20Activity.class,
             Ex21Activity.class, Ex22Activity.class, Ex23Activity.class, Ex24Activity.class, Ex25Activity.class, Ex26Activity.class,
-            Ex27Activity.class, Ex28Activity.class, Ex29Activity.class, Ex30Activity.class, Ex31Activity.class, Ex32Activity.class};
+            Ex27Activity.class, Ex28Activity.class, Ex29Activity.class, Ex30Activity.class, Ex31Activity.class, Ex32Activity.class,
+            Ex33Activity.class,Ex34Activity.class};
 
     @Override
 

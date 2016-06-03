@@ -49,6 +49,8 @@
         <activity android:name=".Ex30Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex31Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex32Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex33Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex34Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ZuoYe" android:theme="@style/AppTheme.NoActionBar"  android:exported="true" android:launchMode="singleTask">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />

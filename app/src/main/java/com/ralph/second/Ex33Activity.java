@@ -33,10 +33,10 @@ public class Ex33Activity extends BaseActivity {
 
     public void writeData(View view)
     {
-        URL url=
-
-        editor.putString("url",);
-        editor.commit();
+//        URL url="www";
+//
+//        editor.putString("url",);
+//        editor.commit();
     }
 
     public void readData(View view)
