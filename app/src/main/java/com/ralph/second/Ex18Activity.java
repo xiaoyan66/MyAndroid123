@@ -2,6 +2,7 @@ package com.ralph.second;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
@@ -10,34 +11,8 @@ import android.widget.SeekBar;
  * Created by 果占先 on 2016/5/23.
  */
 public class Ex18Activity extends BaseActivity {
-    ImageView image;
     @Override
-    protected void initmycreate(Bundle savedInstanceState) {
+    public void initmycreate(Bundle savedInstanceState) {
         setContentView(R.layout.ex18_layout);
-
-        image = (ImageView) findViewById(R.id.img);
-        SeekBar sb = (SeekBar) findViewById(R.id.seek);
-        sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                image.setImageAlpha(progress);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
-
-        RatingBar rb = (RatingBar) findViewById(R.id.starRate);
-        rb.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                image.setImageAlpha((int) (rating*255/5));
-            }
-        });
     }
 }

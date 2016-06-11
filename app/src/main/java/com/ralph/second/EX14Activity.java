@@ -17,44 +17,12 @@ import java.util.TimerTask;
 /**
  * Created by 果占先 on 2016/5/19.
  */
-public class EX14Activity extends BaseActivity {
-    Handler h = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if(msg.what==0){
-                btn.setText("获取验证短信");
-                btn.setEnabled(true);
-                t.cancel();
-            }else{
-                btn.setText("获取中...."+msg.what+"秒");
-            }
-        }
-    };
-
-    Timer t;
-    Button btn;
+public class EX14Activity extends Activity {
     @Override
-    protected void initmycreate(Bundle savedInstanceState) {
-
-        setContentView(R.layout.ex14_layout);
-
-        btn = (Button) findViewById(R.id.sendBtn);
-    }
-
-    public void sendSMS(View view)
-    {
-        btn.setEnabled(false);
-        btn.setText("获取中....");
-        t = new Timer();
-        t.schedule(new TimerTask() {
-            int time = 5;
-            @Override
-            public void run() {
-                Message m = new Message();
-                m.what = time--;
-                h.sendMessage(m);
-            }
-        },100,1000);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EX14view v=new EX14view(this);
+        v.setOnTouchListener(v);
+        setContentView(v);
     }
 }

@@ -5,54 +5,35 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 
 /**
  * Created by 果占先 on 2016/5/23.
  */
 public class Ex17Activity extends BaseActivity {
-
-    int data = 0;
-    Handler h = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if(msg.what == 0x99){
-                pb2.setVisibility(View.GONE);
-            }else {
-                pb.setProgress(data);
-            }
-        }
-    };
-
-    ProgressBar pb;
-
-    ProgressBar pb2;
-
+    String[] i={"java","jsp","mysql","c","c++"};
     @Override
-    protected void initmycreate(Bundle savedInstanceState) {
+    public void initmycreate(Bundle savedInstanceState) {
         setContentView(R.layout.ex17_layout);
-
-        pb = (ProgressBar) findViewById(R.id.pb);
-        pb2 = (ProgressBar) findViewById(R.id.mone1);
-
-        (new Thread(){
+        Spinner s= (Spinner) findViewById(R.id.xiala);
+        ArrayAdapter aa=new ArrayAdapter(this,android.R.layout.simple_expandable_list_item_1,i);
+        s.setAdapter(aa);
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void run() {
-                while(data<100){
-                    h.sendMessage(new Message());
-                    data += 5;
-                    try {
-                        sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                Message m = new Message();
-                m.what = 0x99;
-                h.sendMessage(m);
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String aa="你选择地是"+i[position];
+                Toast.makeText(Ex17Activity.this, aa, Toast.LENGTH_SHORT).show();
             }
-        }).start();
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 }

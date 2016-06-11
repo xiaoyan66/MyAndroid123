@@ -4,7 +4,6 @@ package com.ralph.second;
  * Created by 果占先 on 2016/5/18.
  */
 public class PhoneCity {
-
     /**
      * errNum : 0
      * retMsg : success

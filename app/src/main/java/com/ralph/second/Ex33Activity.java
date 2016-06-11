@@ -1,9 +1,12 @@
 package com.ralph.second;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -15,34 +18,22 @@ import java.util.Date;
  * Created by ${肖岩} on 2016/6/2.
  */
 public class Ex33Activity extends BaseActivity {
-    SharedPreferences sp;
-
-    SharedPreferences.Editor editor;
-
-    EditText text;
-
-    ImageView iv;
+    GridLayout gl;
     @Override
-    protected void initmycreate(Bundle savedInstanceState) {
+    public void initmycreate(Bundle savedInstanceState) {
         setContentView(R.layout.ex33_layout);
-        text= (EditText) findViewById(R.id.et);
-        iv= (ImageView) findViewById(R.id.myimg);
-        sp = getSharedPreferences("ex33",MODE_PRIVATE);
-        editor = sp.edit();
+        gl= (GridLayout) findViewById(R.id.bujiu);
     }
 
-    public void writeData(View view)
-    {
-//        URL url="www";
-//
-//        editor.putString("url",);
-//        editor.commit();
-    }
-
-    public void readData(View view)
-    {
-        String time = sp.getString("url","没有存放时间");
-
-
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation==(Configuration.ORIENTATION_LANDSCAPE)){
+            gl.setColumnCount(3);
+        }
+        if(newConfig.orientation==(Configuration.ORIENTATION_PORTRAIT)){
+            Intent i=new Intent(this,Ex33Activity.class);
+            startActivity(i);
+        }
     }
 }

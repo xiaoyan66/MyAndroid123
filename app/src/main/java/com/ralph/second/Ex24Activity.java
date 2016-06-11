@@ -12,45 +12,35 @@ import android.widget.ImageView;
 /**
  * Created by 果占先 on 2016/5/24.
  */
-public class Ex24Activity extends BaseActivity {
+public class Ex24Activity extends Activity implements Ex24ListFragment.Callback {
+    boolean twoPan;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.cai1);
 
-    public int[] a = {R.drawable.icon_11,R.drawable.icon_28,R.drawable.icon_30,R.drawable.icon_33,R.drawable.icon_37};
+        if(findViewById(R.id.book_detail_container)!=null)
+        {
+            twoPan = true;
+        }
+    }
 
-    public int i = 0;
-    int alpha = 255;
-    ImageView imgView;
 
     @Override
-    protected void initmycreate(Bundle savedInstanceState) {
-        setContentView(R.layout.ex24_layout);
-        imgView = (ImageView)findViewById(R.id.myimage);
-        imgView.setImageResource(a[0]);
-    }
+    public void onItemSelected(Integer id) {
+        if(twoPan)
+        {
+            Bundle b = new Bundle();
+            b.putInt("item_id",id);
 
-    public void last(View view){
-        imgView.setImageResource(a[Math.abs(--i)%5]);
-    }
-    public void next(View view){
-        imgView.setImageResource(a[Math.abs(++i)%5]);
-    }
-    public void tjia(View view){
-        alpha+=10;
-        if(alpha > 255){
-            imgView.setImageAlpha(255);
-            alpha = 255;
-        }else{
-            imgView.setImageAlpha(alpha);
-        }
+            Ex24DetailFragment f = new Ex24DetailFragment();
+            f.setArguments(b);
 
-    }
-    public void tjian(View view){
-        alpha-=10;
-        if(alpha < 0){
-            imgView.setImageAlpha(0);
-            alpha=0;
+            getFragmentManager().beginTransaction().replace(R.id.book_detail_container,f).commit();
         }else{
-            imgView.setImageAlpha(alpha);
+            Intent i = new Intent(this,Ex24ActivitycaiDetail.class);
+            i.putExtra("item_id",id);
+            startActivity(i);
         }
     }
-
 }

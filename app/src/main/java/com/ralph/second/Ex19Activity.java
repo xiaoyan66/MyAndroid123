@@ -2,9 +2,12 @@ package com.ralph.second;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
@@ -20,51 +23,32 @@ import java.util.Objects;
 /**
  * Created by 果占先 on 2016/5/24.
  */
-public class Ex19Activity extends BaseActivity {
-    int[] imgs = {R.drawable.icon_11,R.drawable.icon_13,R.drawable.icon_16,R.drawable.icon_18,
-    R.drawable.icon_28,R.drawable.icon_30,R.drawable.icon_31,R.drawable.icon_33,R.drawable.icon_34,
-    R.drawable.icon_37,R.drawable.icon_40,R.drawable.icon_41};
-    List<Map<String ,Object>> list = new ArrayList<Map<String , Object>>();
-    ImageSwitcher switcher;
+public class Ex19Activity extends PreferenceActivity {
     @Override
-    protected void initmycreate(Bundle savedInstanceState) {
-        setContentView(R.layout.ex19_layout);
-
-        GridView gv = (GridView) findViewById(R.id.grid);
-        for(int i=0;i<imgs.length;i++){
-            Map<String,Object> map = new HashMap<String,Object>();
-            map.put("id",imgs[i]);
-            list.add(map);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (hasHeaders()) {
+            Button button = new Button(this);
+            button.setText("保存设置");
+            setListFooter(button);
         }
-        SimpleAdapter sa=new SimpleAdapter(this,list,R.layout.img_layout,new String[]{"id"},new int []{R.id.image});
-        gv.setAdapter(sa);
+    }
+    @Override
+    public void onBuildHeaders(List<Header> target) {
+        loadHeadersFromResource(R.xml.xitongshezhi,target);
+    }
 
-        switcher = (ImageSwitcher) findViewById(R.id.switcher);
-        switcher.setFactory(new ViewSwitcher.ViewFactory() {
-            @Override
-            public View makeView() {
-                ImageView view = new ImageView(Ex19Activity.this);
-                view.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                view.setLayoutParams(new ImageSwitcher.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                return view;
-            }
-        });
+    @Override
+    protected boolean isValidFragment(String fragmentName) {
+        return true;
+    }
 
-        gv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switcher.setImageResource(imgs[position]);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
-
-        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switcher.setImageResource(imgs[position]);
-            }
-        });
+    public static class beijinyinyue extends PreferenceFragment
+    {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.beijingyinyue);
+        }
     }
 }
