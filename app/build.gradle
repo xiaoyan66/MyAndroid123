@@ -31,4 +31,6 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
     compile files('libs/com.baidu.tts_2.2.6.20160505_a2af8d6_beta.jar')
     compile files('libs/galaxy-v2.0.jar')
+    compile files('libs/okhttp-2.5.0.jar')
+    compile files('libs/okio-1.6.0.jar')
 }

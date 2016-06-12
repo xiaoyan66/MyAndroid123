@@ -65,6 +65,8 @@
         <activity android:name=".Ex39Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex40Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Ex41Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex42Activity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Ex42upload" android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".ZuoYe" android:theme="@style/AppTheme.NoActionBar"  android:exported="true" android:launchMode="singleTask">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
