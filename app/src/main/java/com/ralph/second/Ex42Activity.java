@@ -110,7 +110,7 @@ public class Ex42Activity extends BaseActivity{
             }
             map.put("name",file[i].getName());
             list.add(map);
-        }
+    }
         SimpleAdapter sa = new SimpleAdapter(this,list,R.layout.ex42list,new String[]{"icon","name"},new int[]{R.id.activitysdcardfiles_list_layout_img1,R.id.activitysdcardfiles_list_layout_tv1});
         lv.setAdapter(sa);
         tv.setText(currentFather.getName());
